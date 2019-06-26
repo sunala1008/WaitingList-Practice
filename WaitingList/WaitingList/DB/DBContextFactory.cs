@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace WaitingList.Data
 {
-    class DBContextFactory
+    class DBContextFactory // 쿼리문을 보기 위해서
     {
         private const string FilePath = @"d:\AB.log";
 

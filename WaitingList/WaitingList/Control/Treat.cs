@@ -7,8 +7,6 @@ namespace WaitingList.Control
         public Treatment()
         {
             InitializeComponent();
-
-
         }
     }
 }

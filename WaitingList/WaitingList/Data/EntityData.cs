@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -23,11 +24,46 @@ namespace WaitingList.Data
             }
         }
 
-        public int GetCount()
+        //public int GetCount()
+        //{
+        //    using (ChinookEntities context = DBContextFactory.Create())
+        //    {
+        //        return context.Set<T>().Count();
+        //    }
+        //}
+
+        public int GetCount(Expression<Func<T, bool>> predicate)
+        {
+            using(ChinookEntities context = new ChinookEntities())
+            {
+                return context.Set<T>().Count(predicate);
+            }
+        }
+
+        public void Insert(T entity)
         {
             using (ChinookEntities context = DBContextFactory.Create())
             {
-                return context.Set<T>().Count();
+                context.Set<T>().Add(entity);
+                context.SaveChanges(); // 명령사항 저장하여라
+            }
+        }
+
+        public void Update(T entity)
+        {
+            using (ChinookEntities context = DBContextFactory.Create())
+            {
+                context.Entry(entity).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+
+        public void Delete(T entity)
+        {
+            using (ChinookEntities context = DBContextFactory.Create())
+            {
+                context.Entry(entity).State = EntityState.Deleted;
+                context.SaveChanges();
             }
         }
     }

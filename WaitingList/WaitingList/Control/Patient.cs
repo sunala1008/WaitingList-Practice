@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using WaitingList.Data;
 
 namespace WaitingList.Control
 {
@@ -114,6 +115,28 @@ namespace WaitingList.Control
                 string name = dgvList.Rows[rowIndex].Cells[0].Value.ToString() + " "  + dgvList.Rows[rowIndex].Cells[1].Value.ToString();
 
                 OnRegistButtonClicked(name);
+            }
+        }
+
+        private void DgvList_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Insert)
+            {
+                Customer customer = new Customer();
+                
+                // 등록 폼 
+                // form.ShowDialog();
+            }
+            else if(e.KeyCode == Keys.Delete)
+            {
+                Customer customer = dgvList.CurrentRow.DataBoundItem as Customer;
+
+                if (customer == null)
+                    return;
+
+                if (FormHelper.SureToDelete())
+                    DB.Customer.Delete(customer);
+                    
             }
         }
     }

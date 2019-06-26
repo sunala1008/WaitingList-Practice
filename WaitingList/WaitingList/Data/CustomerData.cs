@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace WaitingList.Data
 {
-    class CustomerData
+    class CustomerData : EntityData<Customer>
     {
         internal List<Customer> Search(string name)
         {
