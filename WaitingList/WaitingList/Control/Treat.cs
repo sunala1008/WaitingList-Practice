@@ -8,5 +8,7 @@ namespace WaitingList.Control
         {
             InitializeComponent();
         }
+
+
     }
 }

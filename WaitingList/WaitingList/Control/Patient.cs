@@ -10,6 +10,8 @@ namespace WaitingList.Control
         public Patient()
         {
             InitializeComponent();
+
+            //bdsCustomer.DataSource = DB.Customer.GetAll();
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -123,9 +125,9 @@ namespace WaitingList.Control
             if(e.KeyCode == Keys.Insert)
             {
                 Customer customer = new Customer();
-                
-                // 등록 폼 
-                // form.ShowDialog();
+
+                CustomerForm form = new CustomerForm(customer);
+                form.ShowDialog();
             }
             else if(e.KeyCode == Keys.Delete)
             {
@@ -139,5 +141,63 @@ namespace WaitingList.Control
                     
             }
         }
+
+        private void BtnNewRegist_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer();
+
+            CustomerForm form = new CustomerForm(customer);
+            form.ShowDialog();
+        }
+
+        private void DgvList_DoubleClick(object sender, EventArgs e)
+        {
+            Customer customer = dgvList.CurrentRow.DataBoundItem as Customer;
+
+            if (customer == null)
+                return;
+
+            OnCustomerRowDoubleClicked(customer);
+        }
+
+        #region CustomerRowDoubleClicked event things for C# 3.0
+        public event EventHandler<CustomerRowDoubleClickedEventArgs> CustomerRowDoubleClicked;
+
+        protected virtual void OnCustomerRowDoubleClicked(CustomerRowDoubleClickedEventArgs e)
+        {
+            if (CustomerRowDoubleClicked != null)
+                CustomerRowDoubleClicked(this, e);
+        }
+
+        private CustomerRowDoubleClickedEventArgs OnCustomerRowDoubleClicked(Customer customer)
+        {
+            CustomerRowDoubleClickedEventArgs args = new CustomerRowDoubleClickedEventArgs(customer);
+            OnCustomerRowDoubleClicked(args);
+
+            return args;
+        }
+
+        private CustomerRowDoubleClickedEventArgs OnCustomerRowDoubleClickedForOut()
+        {
+            CustomerRowDoubleClickedEventArgs args = new CustomerRowDoubleClickedEventArgs();
+            OnCustomerRowDoubleClicked(args);
+
+            return args;
+        }
+
+        public class CustomerRowDoubleClickedEventArgs : EventArgs
+        {
+            public Customer Customer { get; set; }
+
+            public CustomerRowDoubleClickedEventArgs()
+            {
+            }
+
+            public CustomerRowDoubleClickedEventArgs(Customer customer)
+            {
+                Customer = customer;
+            }
+        }
+        #endregion
     }
 }
