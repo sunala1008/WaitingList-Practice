@@ -9,3 +9,5 @@ C# Winform [WaitingList-Practice]
 
 - CRUD 구현 완료 (20190627)
  : Create Read Update Delete
+
+- DevExpress 체험판 / 차트 연습중 (20190627)
