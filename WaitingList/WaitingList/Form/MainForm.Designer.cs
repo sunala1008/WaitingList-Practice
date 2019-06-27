@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tc = new System.Windows.Forms.TabControl();
             this.tpPatient = new System.Windows.Forms.TabPage();
+            this.uscPatientControl = new WaitingList.Control.Patient();
             this.tpTreat = new System.Windows.Forms.TabPage();
+            this.uscTreatmentControl = new WaitingList.Control.Treatment();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.lbMainwaitingList = new System.Windows.Forms.ListBox();
             this.btnWaiterCalling = new System.Windows.Forms.Button();
             this.btnWaiterDel = new System.Windows.Forms.Button();
-            this.uscPatientControl = new WaitingList.Control.Patient();
-            this.uscTreatmentControl = new WaitingList.Control.Treatment();
+            this.ttModifyInfo = new System.Windows.Forms.ToolTip(this.components);
             this.tc.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.tpTreat.SuspendLayout();
@@ -67,6 +69,18 @@
             this.tpPatient.Text = "환자";
             this.tpPatient.UseVisualStyleBackColor = true;
             // 
+            // uscPatientControl
+            // 
+            this.uscPatientControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscPatientControl.Location = new System.Drawing.Point(3, 3);
+            this.uscPatientControl.Name = "uscPatientControl";
+            this.uscPatientControl.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uscPatientControl.Size = new System.Drawing.Size(660, 394);
+            this.uscPatientControl.TabIndex = 0;
+            this.uscPatientControl.SearchButtonClicked += new System.EventHandler<WaitingList.Control.Patient.SearchButtonClickedEventArgs>(this.UscPatientControl_SearchButtonClicked);
+            this.uscPatientControl.RegistButtonClicked += new System.EventHandler<WaitingList.Control.Patient.RegistButtonClickedEventArgs>(this.UscPatientControl_RegistButtonClicked);
+            this.uscPatientControl.CustomerRowDoubleClicked += new System.EventHandler<WaitingList.Control.Patient.CustomerRowDoubleClickedEventArgs>(this.UscPatientControl_CustomerRowDoubleClicked);
+            // 
             // tpTreat
             // 
             this.tpTreat.Controls.Add(this.uscTreatmentControl);
@@ -77,6 +91,14 @@
             this.tpTreat.TabIndex = 0;
             this.tpTreat.Text = "진료";
             this.tpTreat.UseVisualStyleBackColor = true;
+            // 
+            // uscTreatmentControl
+            // 
+            this.uscTreatmentControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscTreatmentControl.Location = new System.Drawing.Point(3, 3);
+            this.uscTreatmentControl.Name = "uscTreatmentControl";
+            this.uscTreatmentControl.Size = new System.Drawing.Size(660, 394);
+            this.uscTreatmentControl.TabIndex = 0;
             // 
             // button1
             // 
@@ -138,26 +160,6 @@
             this.btnWaiterDel.UseVisualStyleBackColor = true;
             this.btnWaiterDel.Click += new System.EventHandler(this.BtnWaiterDel_Click);
             // 
-            // uscPatientControl
-            // 
-            this.uscPatientControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscPatientControl.Location = new System.Drawing.Point(3, 3);
-            this.uscPatientControl.Name = "uscPatientControl";
-            this.uscPatientControl.Padding = new System.Windows.Forms.Padding(5);
-            this.uscPatientControl.Size = new System.Drawing.Size(660, 394);
-            this.uscPatientControl.TabIndex = 0;
-            this.uscPatientControl.SearchButtonClicked += new System.EventHandler<WaitingList.Control.Patient.SearchButtonClickedEventArgs>(this.UscPatientControl_SearchButtonClicked);
-            this.uscPatientControl.RegistButtonClicked += new System.EventHandler<WaitingList.Control.Patient.RegistButtonClickedEventArgs>(this.UscPatientControl_RegistButtonClicked);
-            this.uscPatientControl.CustomerRowDoubleClicked += new System.EventHandler<WaitingList.Control.Patient.CustomerRowDoubleClickedEventArgs>(this.UscPatientControl_CustomerRowDoubleClicked);
-            // 
-            // uscTreatmentControl
-            // 
-            this.uscTreatmentControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscTreatmentControl.Location = new System.Drawing.Point(3, 3);
-            this.uscTreatmentControl.Name = "uscTreatmentControl";
-            this.uscTreatmentControl.Size = new System.Drawing.Size(660, 394);
-            this.uscTreatmentControl.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -193,6 +195,7 @@
         private System.Windows.Forms.Button btnWaiterCalling;
         private System.Windows.Forms.Button btnWaiterDel;
         private Control.Treatment uscTreatmentControl;
+        private System.Windows.Forms.ToolTip ttModifyInfo;
     }
 }
 

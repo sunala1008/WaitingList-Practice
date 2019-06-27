@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace WaitingList.Control
 {
-    public partial class WaitingList : UserControl
+    public partial class WaitingList : XtraUserControl
     {
         public WaitingList()
         {

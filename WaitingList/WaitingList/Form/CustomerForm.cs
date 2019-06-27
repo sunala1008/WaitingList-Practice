@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,7 +59,7 @@ namespace WaitingList
         }
 
         private void CustomerForm_Load(object sender, EventArgs e)
-        {
+        {   // 열을 더블클릭하면 뜨는 수정폼에 데이터 채워넣기
             bdsCustomer.DataSource = DB.Customer.GetAll();
 
             ReadFromEntity();

@@ -1,24 +1,18 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using WaitingList.Data;
 
 namespace WaitingList.Control
 {
-    public partial class Patient : UserControl
+    public partial class Patient : XtraUserControl
     {
         public Patient()
         {
             InitializeComponent();
 
             //bdsCustomer.DataSource = DB.Customer.GetAll();
-        }
-
-        private void BtnSearch_Click(object sender, EventArgs e)
-        {
-            string Name = txbName.Text;
-
-            OnSearchButtonClicked(Name);
         }
 
         #region SearchButtonClicked event things for C# 3.0
@@ -138,7 +132,6 @@ namespace WaitingList.Control
 
                 if (FormHelper.SureToDelete())
                     DB.Customer.Delete(customer);
-                    
             }
         }
 
@@ -199,5 +192,18 @@ namespace WaitingList.Control
             }
         }
         #endregion
+
+        private void BtnShowChart_Click(object sender, EventArgs e)
+        {
+            Form form = new DevCustomerChartForm();
+            form.Show();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string name = txbName.Text;
+
+            OnSearchButtonClicked(name);
+        }
     }
 }

@@ -1,8 +1,9 @@
-﻿using System.Windows.Forms;
+﻿using DevExpress.XtraEditors;
+using System.Windows.Forms;
 
 namespace WaitingList.Control
 {
-    public partial class Treatment : UserControl
+    public partial class Treatment : XtraUserControl
     {
         public Treatment()
         {
