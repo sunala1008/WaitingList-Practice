@@ -2,6 +2,8 @@
 using System;
 using System.Windows.Forms;
 using WaitingList.Data;
+using System.Drawing;
+using WaitingList.Properties;
 
 namespace WaitingList
 {
@@ -10,6 +12,8 @@ namespace WaitingList
         public MainForm()
         {
             InitializeComponent();
+
+            Icon = Resources.Cat_Icon;
         }
 
         private void BtnQuit_Click(object sender, EventArgs e)
@@ -19,12 +23,12 @@ namespace WaitingList
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            tc.SelectedTab = tpPatient;
+            tcMain.SelectedTab = tpPatient;
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            tc.SelectedTab = tpTreat;
+            tcMain.SelectedTab = tpTreat;
         }
 
         private void UscPatientControl_SearchButtonClicked(object sender, Control.Patient.SearchButtonClickedEventArgs e)
@@ -41,9 +45,12 @@ namespace WaitingList
 
         private void BtnWaiterAlarm_Click(object sender, EventArgs e)
         {
+            lbMainwaitingList.SelectedIndex = 0;
             MessageBox.Show($"{lbMainwaitingList.Text}님 들어오세요.");
 
-            tc.SelectedTab = tpTreat;
+            tcMain.SelectedTab = tpTreat;
+
+            lbMainwaitingList.Items.RemoveAt(lbMainwaitingList.SelectedIndex);
         }
 
         private void UscPatientControl_RegistButtonClicked(object sender, Control.Patient.RegistButtonClickedEventArgs e)

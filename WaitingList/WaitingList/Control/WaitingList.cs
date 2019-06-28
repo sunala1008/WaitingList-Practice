@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 
 namespace WaitingList.Control
 {
-    public partial class WaitingList : XtraUserControl
+    public partial class WaitingList : UserControl
     {
         public WaitingList()
         {

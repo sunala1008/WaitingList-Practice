@@ -6,7 +6,7 @@ using WaitingList.Data;
 
 namespace WaitingList.Control
 {
-    public partial class Patient : XtraUserControl
+    public partial class Patient : UserControl
     {
         public Patient()
         {

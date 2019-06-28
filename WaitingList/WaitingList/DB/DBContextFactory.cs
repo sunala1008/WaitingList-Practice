@@ -35,7 +35,7 @@ namespace WaitingList.Data
         {
             ChinookEntities context = new ChinookEntities();
 
-            context.Database.Log = Write;
+            context.Database.Log = Write; // 쿼리문
 
             return context;
         }

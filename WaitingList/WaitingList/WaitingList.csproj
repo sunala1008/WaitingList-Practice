@@ -58,6 +58,8 @@
     <Reference Include="DevExpress.XtraCharts.v19.1.UI, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v19.1.Wizard, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraWizard.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -197,6 +199,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Chinook.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -231,6 +234,26 @@
       <DependentUpon>Chinook.edmx</DependentUpon>
       <LastGenOutput>Chinook.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Doc_Icon.ico" />
+    <None Include="Resources\VET_Icon.ico" />
+    <None Include="Resources\Customer.png" />
+    <None Include="Resources\Chart.png" />
+    <None Include="Resources\Cat.png" />
+    <None Include="Resources\C&amp;D.png" />
+    <None Include="Resources\Artist.png" />
+    <None Include="Resources\Album.png" />
+    <None Include="Resources\Alarm.png" />
+    <None Include="Resources\Veterinary.png" />
+    <None Include="Resources\VET.png" />
+    <None Include="Resources\Unicorn_Icon.ico" />
+    <None Include="Resources\surgery.png" />
+    <None Include="Resources\Scary Unicorn.png" />
+    <None Include="Resources\Scary Unicorn 128.png" />
+    <None Include="Resources\OFF.png" />
+    <None Include="Resources\iconfinder_stetoskop_3708104.png" />
+    <None Include="Resources\iconfinder_cat_fight_182509.ico" />
+    <None Include="Resources\Dog.png" />
+    <None Include="Resources\Doctor.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WaitingList.Data;
+using WaitingList.Properties;
 
 namespace WaitingList
 {
@@ -19,6 +20,7 @@ namespace WaitingList
             InitializeComponent();
 
             _customer = customer;
+            Icon = Resources.Cat_Icon;
         }
 
         private Customer _customer;

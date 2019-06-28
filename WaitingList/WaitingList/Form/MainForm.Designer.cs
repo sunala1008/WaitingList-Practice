@@ -28,35 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tc = new System.Windows.Forms.TabControl();
+            this.tcMain = new System.Windows.Forms.TabControl();
             this.tpPatient = new System.Windows.Forms.TabPage();
             this.uscPatientControl = new WaitingList.Control.Patient();
             this.tpTreat = new System.Windows.Forms.TabPage();
-            this.uscTreatmentControl = new WaitingList.Control.Treatment();
+            this.uscTreatment = new WaitingList.Control.Treatment();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.lbMainwaitingList = new System.Windows.Forms.ListBox();
             this.btnWaiterCalling = new System.Windows.Forms.Button();
             this.btnWaiterDel = new System.Windows.Forms.Button();
-            this.ttModifyInfo = new System.Windows.Forms.ToolTip(this.components);
-            this.tc.SuspendLayout();
+            this.tcMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.tpTreat.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tc
+            // tcMain
             // 
-            this.tc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tc.Controls.Add(this.tpPatient);
-            this.tc.Controls.Add(this.tpTreat);
-            this.tc.Location = new System.Drawing.Point(154, 12);
-            this.tc.Name = "tc";
-            this.tc.SelectedIndex = 0;
-            this.tc.Size = new System.Drawing.Size(674, 426);
-            this.tc.TabIndex = 0;
+            this.tcMain.Controls.Add(this.tpPatient);
+            this.tcMain.Controls.Add(this.tpTreat);
+            this.tcMain.Location = new System.Drawing.Point(154, 12);
+            this.tcMain.Name = "tcMain";
+            this.tcMain.SelectedIndex = 0;
+            this.tcMain.Size = new System.Drawing.Size(674, 426);
+            this.tcMain.TabIndex = 0;
             // 
             // tpPatient
             // 
@@ -83,22 +81,21 @@
             // 
             // tpTreat
             // 
-            this.tpTreat.Controls.Add(this.uscTreatmentControl);
+            this.tpTreat.Controls.Add(this.uscTreatment);
             this.tpTreat.Location = new System.Drawing.Point(4, 22);
             this.tpTreat.Name = "tpTreat";
-            this.tpTreat.Padding = new System.Windows.Forms.Padding(3);
             this.tpTreat.Size = new System.Drawing.Size(666, 400);
-            this.tpTreat.TabIndex = 0;
+            this.tpTreat.TabIndex = 2;
             this.tpTreat.Text = "진료";
-            this.tpTreat.UseVisualStyleBackColor = true;
             // 
-            // uscTreatmentControl
+            // uscTreatment
             // 
-            this.uscTreatmentControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscTreatmentControl.Location = new System.Drawing.Point(3, 3);
-            this.uscTreatmentControl.Name = "uscTreatmentControl";
-            this.uscTreatmentControl.Size = new System.Drawing.Size(660, 394);
-            this.uscTreatmentControl.TabIndex = 0;
+            this.uscTreatment.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.uscTreatment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscTreatment.Location = new System.Drawing.Point(0, 0);
+            this.uscTreatment.Name = "uscTreatment";
+            this.uscTreatment.Size = new System.Drawing.Size(666, 400);
+            this.uscTreatment.TabIndex = 0;
             // 
             // button1
             // 
@@ -172,10 +169,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbMainwaitingList);
-            this.Controls.Add(this.tc);
+            this.Controls.Add(this.tcMain);
             this.Name = "MainForm";
             this.Text = "Form1";
-            this.tc.ResumeLayout(false);
+            this.tcMain.ResumeLayout(false);
             this.tpPatient.ResumeLayout(false);
             this.tpTreat.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -184,7 +181,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tc;
+        private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage tpTreat;
         private System.Windows.Forms.TabPage tpPatient;
         private System.Windows.Forms.Button button1;
@@ -195,7 +192,7 @@
         private System.Windows.Forms.Button btnWaiterCalling;
         private System.Windows.Forms.Button btnWaiterDel;
         private Control.Treatment uscTreatmentControl;
-        private System.Windows.Forms.ToolTip ttModifyInfo;
+        private Control.Treatment uscTreatment;
     }
 }
 
