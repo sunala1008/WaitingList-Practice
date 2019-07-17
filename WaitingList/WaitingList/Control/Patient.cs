@@ -7,7 +7,7 @@ using WaitingList.Data;
 namespace WaitingList.Control
 {
     public partial class Patient : UserControl
-    {
+    {                   //  
         public Patient()
         {
             InitializeComponent();
@@ -103,7 +103,7 @@ namespace WaitingList.Control
         private void BtnRegist_Click(object sender, EventArgs e)
         {
             if (dgvList.CurrentRow == null)
-                MessageBox.Show("환자를 선택해 주세요.");
+                MessageBox.Show("고객을 선택해 주세요.");
             else
             {
                 int rowIndex = dgvList.CurrentRow.Index;

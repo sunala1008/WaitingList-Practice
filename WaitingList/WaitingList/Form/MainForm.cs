@@ -23,12 +23,12 @@ namespace WaitingList
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            tcMain.SelectedTab = tpPatient;
+            tcMain.SelectedTab = tpCustomer;
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            tcMain.SelectedTab = tpTreat;
+            tcMain.SelectedTab = tpInfo;
         }
 
         private void UscPatientControl_SearchButtonClicked(object sender, Control.Patient.SearchButtonClickedEventArgs e)
@@ -39,24 +39,24 @@ namespace WaitingList
 
         private void BtnWaiterDel_Click(object sender, EventArgs e)
         {
-            if (lbMainwaitingList.SelectedIndex > -1)
-                lbMainwaitingList.Items.RemoveAt(lbMainwaitingList.SelectedIndex);
+            if (lbMainList.SelectedIndex > -1)
+                lbMainList.Items.RemoveAt(lbMainList.SelectedIndex);
         }
 
         private void BtnWaiterAlarm_Click(object sender, EventArgs e)
         {
-            lbMainwaitingList.SelectedIndex = 0;
-            MessageBox.Show($"{lbMainwaitingList.Text}님 들어오세요.");
+            lbMainList.SelectedIndex = 0;
+            MessageBox.Show($"{lbMainList.Text}의 세부 정보탭으로 넘어갑니다.");
 
-            tcMain.SelectedTab = tpTreat;
+            tcMain.SelectedTab = tpInfo;
 
-            lbMainwaitingList.Items.RemoveAt(lbMainwaitingList.SelectedIndex);
+            lbMainList.Items.RemoveAt(lbMainList.SelectedIndex);
         }
 
         private void UscPatientControl_RegistButtonClicked(object sender, Control.Patient.RegistButtonClickedEventArgs e)
         {
-            if (!lbMainwaitingList.Items.Contains(e.Name))
-                lbMainwaitingList.Items.Add(e.Name); // 같은 열 중복해서 대기열 등록 불가
+            if (!lbMainList.Items.Contains(e.Name))
+                lbMainList.Items.Add(e.Name); // 같은 열 중복해서 대기열 등록 불가
         }
 
         private void UscPatientControl_CustomerRowDoubleClicked(object sender, Control.Patient.CustomerRowDoubleClickedEventArgs e)
@@ -66,8 +66,9 @@ namespace WaitingList
             if (customer == null)
                 return;
 
-            CustomerForm form = new CustomerForm(customer);
-            form.Show();
+            //CustomerForm form = new CustomerForm(customer);
+            //form.Show();
+            tcMain.SelectedTab = tpInfo;
         }
     }
 }

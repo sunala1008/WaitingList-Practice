@@ -38,6 +38,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bdsCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -116,7 +121,7 @@
             // 
             // bdsCustomer
             // 
-            this.bdsCustomer.DataSource = typeof(WaitingList.Control.WaitingList.Customer);
+            this.bdsCustomer.DataSource = typeof(WaitingList.Customer);
             // 
             // dgvList
             // 
@@ -127,6 +132,12 @@
             this.dgvList.AutoGenerateColumns = false;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn40,
+            this.dataGridViewTextBoxColumn41,
+            this.dataGridViewTextBoxColumn42,
+            this.dataGridViewTextBoxColumn43,
+            this.dataGridViewTextBoxColumn44});
             this.dgvList.DataSource = this.bdsCustomer;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(5, 47);
@@ -140,6 +151,41 @@
             this.dgvList.DoubleClick += new System.EventHandler(this.DgvList_DoubleClick);
             this.dgvList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DgvList_KeyUp);
             // 
+            // dataGridViewTextBoxColumn40
+            // 
+            this.dataGridViewTextBoxColumn40.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn40.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+            this.dataGridViewTextBoxColumn40.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn41
+            // 
+            this.dataGridViewTextBoxColumn41.DataPropertyName = "LastName";
+            this.dataGridViewTextBoxColumn41.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.dataGridViewTextBoxColumn41.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn42
+            // 
+            this.dataGridViewTextBoxColumn42.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn42.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            this.dataGridViewTextBoxColumn42.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn43
+            // 
+            this.dataGridViewTextBoxColumn43.DataPropertyName = "Country";
+            this.dataGridViewTextBoxColumn43.HeaderText = "Country";
+            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn44
+            // 
+            this.dataGridViewTextBoxColumn44.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn44.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            this.dataGridViewTextBoxColumn44.ReadOnly = true;
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -147,7 +193,7 @@
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.groupBox1);
             this.Name = "Patient";
-            this.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(723, 226);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -212,5 +258,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
         private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn40;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn41;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
     }
 }
